@@ -148,7 +148,7 @@
     "python.dataScience.runStartupCommands": "%load_ext autoreload\n%autoreload 2",
     "python.dataScience.sendSelectionToInteractiveWindow": false,
     "python.dataScience.enableCellCodeLens": true,
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vscode-icons",
     // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "workbench.settings.openDefaultSettings": false,
     "editor.formatOnSave": false,
