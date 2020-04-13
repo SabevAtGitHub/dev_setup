@@ -1,0 +1,173 @@
+{
+    "workbench.sideBar.location": "right",
+    "[cpp]": {},
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.hovers.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    // "C_Cpp.clang_format_path": "C:\\Program Files (x86)\\LLVM\\bin\\clang-format.exe",
+    // "C_Cpp.intelliSenseEngine": "Default",
+    "gitlens.views.repositories.autoRefresh": false,
+    "gitlens.views.fileHistory.avatars": false,
+    "gitlens.views.lineHistory.avatars": false,
+    "gitlens.views.compare.avatars": false,
+    "gitlens.views.repositories.avatars": false,
+    "gitlens.views.search.avatars": false,
+    "gitlens.views.repositories.location": "scm",
+    "gitlens.keymap": "none",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "breadcrumbs.enabled": true,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": false,
+    // "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+    // "editor.fontFamily" : "Fira Code",
+    "editor.fontFamily": "Source Code Pro",
+    "workbench.colorTheme": "azure",
+    "editor.tokenColorCustomizations": {
+        "[Flatland Monokai]": {
+            "variables": "#AE81FF",
+            "strings": "#F9D43E",
+            "textMateRules": [
+                {
+                    "scope": [
+                        "comment",
+                        "variable",
+                        "entity.other.attribute-name",
+                    ],
+                    "settings": {
+                        "fontStyle": "italic"
+                    }
+                },
+                {
+                    "scope": "keyword",
+                    "settings": {
+                        "fontStyle": "italic bold"
+                    }
+                }
+            ]
+        },
+        "[azure]": {
+            "keywords": "#8f81a8",
+            // "numbers": "#FF0000",
+            // "strings": "#f89f89",
+            "textMateRules": [
+                {
+                    "scope": [
+                        "keyword",
+                        // "meta",
+                    ],
+                    "settings": {
+                        // "foreground": "#b294e9",
+                        "fontStyle": "italic"
+                    }
+                },
+                {
+                    "scope": [
+                        "keyword.operator.assignment",
+                        "keyword.operator.arithmetic",
+                        "keyword.operator.logical",
+                        "keyword.operator.new",
+                        "entity.name.function"
+                    ],
+                    "settings": {
+                        "foreground": "#508aaa",
+                    }
+                },
+                {
+                    "scope": "meta",
+                    "settings": {
+                        "foreground": "#f8f8f0"
+                    }
+                },
+                {
+                    "scope": [
+                        "variable.parameter",
+                    ],
+                    "settings": {
+                        "foreground": "#b46274"
+                    }
+                },
+                {
+                    "scope": [
+                        "entity.other.attribute-name"
+                    ],
+                    "settings": {
+                        "foreground": "#b46274",
+                        "fontStyle": "bold"
+                    }
+                }
+            ],
+        }
+    },
+    "workbench.colorCustomizations": {
+        "[azure]": {
+            "sideBar.background": "#181D26",
+            "tab.activeBorder": "#b46274",
+            "tab.inactiveBackground": "#181D26",
+            "tab.inactiveForeground": "#f8f8f0",
+            "tab.activeForeground": "#f8f8f0",
+            "menu.background": "#282b35",
+            "editor.selectionBackground": "#414d628f",
+            "editor.lineHighlightBackground": "#414d623a",
+            "activityBar.background": "#25272e",
+            "titleBar.activeBackground": "#414d628f",
+            "editorGroupHeader.tabsBackground": "#25272e",
+            "breadcrumb.foreground": "#97999c",
+            "input.background": "#25272e",
+            "input.foreground": "#f8f8f0",
+            "input.placeholderForeground": "#97999c",
+            //
+            "tab.unfocusedHoverBorder": "#508aaa",
+            //
+            "editorIndentGuide.activeBackground": "#b46274a9",
+            "editorIndentGuide.background": "#92546156",
+            "editorCodeLens.foreground": "#97999c"
+        }
+    },
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.inheritEnv": false,
+    "markdown.preview.fontSize": 16,
+    "workbench.editor.showTabs": true,
+    "cSpell.diagnosticLevel": "Hint",
+    "cSpell.userWords": [
+        "Monokai",
+        "functools",
+        "gitlens",
+        "jupyter",
+        "numpy"
+    ],
+    "python.jediEnabled": false,
+    "python.dataScience.askForKernelRestart": false,
+    "python.dataScience.runStartupCommands": "%load_ext autoreload\n%autoreload 2",
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "python.dataScience.enableCellCodeLens": true,
+    "workbench.iconTheme": "material-icon-theme",
+    // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "workbench.settings.openDefaultSettings": false,
+    "editor.formatOnSave": false,
+    "python.formatting.provider": "black",
+    "workbench.settings.useSplitJSON": false,
+    "code-runner.runInTerminal": true,
+    "todo-tree.general.tags": [
+        "BUGFIX",
+        "TODO",
+        "FIXME",
+        "BUG",
+        "NOTE"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "BUGFIX": {
+            "icon": "alert",
+            "foreground": "#EE3A6A",
+            "type": "tag"
+        },
+    },
+    "diffEditor.ignoreTrimWhitespace": false
+}

@@ -1,0 +1,83 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+shift+s",
+        "command": "-workbench.action.files.saveAs"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.files.saveAll"
+    },
+    {
+        "key": "ctrl+k s",
+        "command": "-workbench.action.files.saveAll"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "-workbench.action.openSettings"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.openSettingsJson"
+    },
+    {
+        "key": "ctrl+alt+,",
+        "command": "workbench.action.openRawDefaultSettings"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "workbench.action.tasks.runTask",
+        "args": "clean"
+    },
+    { "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "python.datascience.restartkernel",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells"
+    },
+    {
+        "key": "ctrl+shift+backspace",
+        "command": "python.datascience.removeallcells",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+right",
+        "command": "workbench.action.moveEditorToRightGroup",
+    },
+    {
+        "key": "ctrl+k ctrl+shift+left",
+        "command": "workbench.action.moveEditorToLeftGroup",
+    },
+    {
+        "key": "ctrl+k ctrl+shift+up",
+        "command": "workbench.action.moveEditorToAboveGroup",
+    },
+    {
+        "key": "ctrl+k ctrl+shift+down",
+        "command": "workbench.action.moveEditorToBelowGroup",
+        
+    },
+    {
+        "key": "shift+alt+r",
+        "command": "revealFileInOS"
+    },
+    {
+        "key": "shift+alt+r",
+        "command": "-revealFileInOS",
+        "when": "!editorFocus"
+    }
+    
+]
