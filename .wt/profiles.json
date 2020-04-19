@@ -5,7 +5,7 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
 
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
 
     "profiles":
     {
@@ -16,7 +16,7 @@
         "list":
         [
             {
-                "acrylicOpacity" : 0.75,
+                "acrylicOpacity" : 0.89,
                 "closeOnExit" : true,
                 "colorScheme" : "One Half Dark",
                 "commandline" : "cmd.exe",
@@ -81,6 +81,14 @@
                 "colorScheme": "Dracula",
                 "hidden": false,
                 "startingDirectory": "."
+            },
+            {
+                "name": "Developer Command Prompt for VS 2019",
+                "commandline": "%comspec% /k \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\Tools\\VsDevCmd.bat\"",
+                "icon" : "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
+                "startingDirectory": ".",
+                "colorScheme": "Dracula",
+                "hidden": false
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
