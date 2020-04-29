@@ -1,0 +1,204 @@
+{
+	// Place your snippets for vba here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"fx Function" : {
+		"prefix": "fxFunc",
+		"body": [
+			"\t''' $4",
+			"\t'''  Params:",
+			"\t'''   $2:",
+			"\tPublic Function ${1:FuncName}($2) As ${3:ReturnType}",
+			"Attribute $1.VB_Description = \"${4:Doc string}  \\nParams:\\n $2\"",
+			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString then fx_ResetErr_",
+			"\t\tConst fx_PROC_ = \"$1\"",
+			"\t\t$0",
+			"\n\t\t$1 = ",
+			"\tEnd Function"
+		],
+		"description": "Creates fx Function with Attribute"
+	},
+	"fx Function with Error Handling" : {
+		"prefix": "fxFuncErr",
+		"body": [
+			"\t''' $4",
+			"\t'''  Params:",
+			"\t'''   $2:",
+			"\tPublic Function ${1:FuncName}($2) As ${3:ReturnType}",
+			"Attribute $1.VB_Description = \"${4:Doc string}  \\nParams:\\n $2\"",
+			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString then fx_ResetErr_",
+			"\t\tConst fx_PROC_ = \"$1\"",
+			"\t\t",
+			"\t\tOn Error GoTo failed",
+			"\t\t$0",
+			"\t\t$1 = ",
+			"\t\tOn Error GoTo 0",
+			"\n\tExit Function",
+			"failed:",
+		    "\t\tIf fx_ErrNum_ = fxErrNone Then Call fx_SetErr_(fxErrSystem, fx_PROC_, Err.Description)",
+			"\t\tOn Error GoTo 0",
+			"\n\tEnd Function"
+		],
+		"description": "Creates fx Function with Error Handling"
+	},
+	"fx Sub" : {
+		"prefix": "fxSub",
+		"body": [
+			"\t''' $3",
+			"\t'''  Params:",
+			"\t'''   $2:",			
+			"\tPublic Sub ${1:FuncName}($2)",
+			"Attribute $1.VB_Description = \"${3:Doc string}  \\nParams:\\n $2\"",
+			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString then fx_ResetErr_",
+			"\t\tConst fx_PROC_ = \"$1\"",
+			"\t\t$0",
+			"\n\tEnd Sub"
+		],
+		"description": "Creates fx Sub with Attribute"
+	},
+	"fx Sub with Error Handling" : {
+		"prefix": "fxSubErr",
+		"body": [
+			"\t''' $3",
+			"\t'''  Params:",
+			"\t'''   $2:",			
+			"\tPublic Sub ${1:FuncName}($2)",
+			"Attribute $1.VB_Description = \"${3:Doc string}  \\nParams:\\n $2\"",
+			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString then fx_ResetErr_",
+			"\t\tConst fx_PROC_ = \"$1\"",
+			"\t\tOn Error GoTo failed",
+			"\t\t$0",
+			"\t\tOn Error GoTo 0",
+			"\n\tExit Sub",
+			"failed:",
+            "\t\tIf fx_ErrNum_ = fxErrNone Then Call fx_SetErr_(fxErrSystem, fx_PROC_, Err.Description)",
+			"\t\tOn Error GoTo 0",
+			"\n\tEnd Sub"
+		],
+		"description": "Creates fx Sub with Error Handling"
+	},	
+	"On Error Resume Next" : {
+		"prefix": "OnErr",
+		"body": [
+			"On Error Resume Next",
+			"$0",
+			"On Error GoTo 0",
+		]
+	},	
+	"On Error GoTo failed" : {
+		"prefix": "OnFail",
+		"body": [
+			"On Error GoTo failed",
+			"$0",
+			"On Error GoTo 0",
+		]
+	},
+	"For Loop" : {
+		"prefix": "fori",
+		"body": [
+			"For ${1:i} = ${2:0} To ${3:iCount}",
+			"\t$0",
+			"Next $1",
+		]
+	},
+	"Bounds For Loop" : {
+		"prefix": "forbound",
+		"body": [
+			"For ${1:i} = LBound(${2:arr}) To UBound($2)",
+			"\t$0",
+			"Next $1",
+		]
+	},
+	"If / End If" : {
+		"prefix": "ifEnd",
+		"body": [
+			"If ${1:Expression} Then",
+			"\t$0",
+			"End If",
+		]
+	},
+	"If / Then" : {
+		"prefix": "ifThen",
+		"body": [
+			"If ${1:Expression} Then $0",
+		]
+	},
+	"If Is Nothing" : {
+		"prefix": "ifIsNoth",
+		"body": [
+			"If ${1:Object} Is Nothing Then",
+			"\t$0",
+			"End If",			
+		]
+	},
+	"With / End With" : {
+		"prefix": "WithE",
+		"body": [
+			"With ${1:Object}",
+			"\t$0",
+			"End With",
+		]
+	},
+	"End If" : {
+		"prefix": "endIf",
+		"body": [
+			"\t$0",
+			"End If",
+		]
+	},
+	"End Sub" : {
+		"prefix": "endsub",
+		"body": [
+			"\t$0",
+			"End Sub",
+		]
+	},
+	"End Function" : {
+		"prefix": "endfunction",
+		"body": [
+			"\t$0",
+			"End Function",
+		]
+	},
+	"Sub" : {
+		"prefix": "sub",
+		"body": [
+			"${1|Private,Public|} Sub ${2:SubName}($3)\n",
+			"\t$0\n",
+			"End Sub",
+		]
+	},
+	"Exit Sub / Function" : {
+		"prefix": "exit",
+		"body": [
+			"Exit ${1|Sub,Function|}\n$0",
+		]
+	},
+	"Is Nothing" : {
+		"prefix": "IsNoth",
+		"body": [
+			"Is Nothing $0",
+		]
+	},
+	"If / Else" : {
+		"prefix": "ifElse",
+		"body": [
+			"If ${1:Expression} Then",
+			"\t$0",
+			"Else",
+			"\t",
+			"End If",
+		]
+	}
+}
