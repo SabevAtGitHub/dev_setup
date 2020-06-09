@@ -7,7 +7,7 @@
 			"\t'''   $2:",
 			"\tPublic Function ${1:FuncName}($2) As ${3:ReturnType}",
 			"Attribute $1.VB_Description = \"${4:Doc string}  \\nParams:\\n $2\"",
-			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString then fx_ResetErr_",
+			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString Then fx_ResetErr_",
 			"\t\tConst fx_PROC_ = \"$1\"",
 			"\t\t$0",
 			"\n\t\t$1 = ",
@@ -23,7 +23,7 @@
 			"\t'''   $2:",
 			"\tPublic Function ${1:FuncName}($2) As ${3:ReturnType}",
 			"Attribute $1.VB_Description = \"${4:Doc string}  \\nParams:\\n $2\"",
-			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString then fx_ResetErr_",
+			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString Then fx_ResetErr_",
 			"\t\tConst fx_PROC_ = \"$1\"",
 			"\t\t",
 			"\t\tOn Error GoTo failed",
@@ -46,7 +46,7 @@
 			"\t'''   $2:",			
 			"\tPublic Sub ${1:FuncName}($2)",
 			"Attribute $1.VB_Description = \"${3:Doc string}  \\nParams:\\n $2\"",
-			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString then fx_ResetErr_",
+			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString Then fx_ResetErr_",
 			"\t\tConst fx_PROC_ = \"$1\"",
 			"\t\t$0",
 			"\n\tEnd Sub"
@@ -61,7 +61,7 @@
 			"\t'''   $2:",			
 			"\tPublic Sub ${1:FuncName}($2)",
 			"Attribute $1.VB_Description = \"${3:Doc string}  \\nParams:\\n $2\"",
-			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString then fx_ResetErr_",
+			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString Then fx_ResetErr_",
 			"\t\tConst fx_PROC_ = \"$1\"",
 			"\t\tOn Error GoTo failed",
 			"\t\t$0",
@@ -75,7 +75,7 @@
 		"description": "Creates fx Sub with Error Handling"
 	},	
 	"On Error Resume Next" : {
-		"prefix": "OnErr",
+		"prefix": "OnErrorResume",
 		"body": [
 			"On Error Resume Next",
 			"$0",
@@ -83,11 +83,20 @@
 		]
 	},	
 	"On Error GoTo failed" : {
-		"prefix": "OnFail",
+		"prefix": "OnErrorGoToFail",
 		"body": [
-			"On Error GoTo failed",
+			"On Error GoTo Failed$0"
+		]
+	},	
+	"On Error GoTo failed, Exit Sub/Function" : {
+		"prefix": "OnErrorGoToFail_Exit_SubFunc",
+		"body": [
+			"On Error GoTo Failed",
 			"$0",
-			"On Error GoTo 0"
+			"Exit ${1|Sub,Function|Property}",
+			"Failed:\n",
+			"' Your code here...",
+			"End $1"
 		]
 	},
 	"For Loop" : {
@@ -115,21 +124,45 @@
 		]
 	},
 	"If / Then" : {
-		"prefix": "ifThen",
+		"prefix": "IfThen",
 		"body": [
 			"If ${1:Expression} Then $0"
 		]
 	},
-	"If Is Nothing" : {
-		"prefix": "ifIsNoth",
+	"If Then EndIf" : {
+		"prefix": "IfThen_EndIf",
+		"body": [
+			"If ${1:Expression} Then",
+			"\t$0",
+			"End If"
+		]
+	},
+	"If Is Nothing Then End If" : {
+		"prefix": "if_IsNothing_Then_EndIf",
 		"body": [
 			"If ${1:Object} Is Nothing Then",
 			"\t$0",
 			"End If"	
 		]
 	},
+	"If Is Nothing Then Else" : {
+		"prefix": "if_IsNothing_Then_Else",
+		"body": [
+			"If ${1:Object} Is Nothing Then",
+			"\t$0",
+			"Else",
+			"\t",
+			"End If"	
+		]
+	},
+	"If Is Nothing Then" : {
+		"prefix": "if_IsNothing_Then",
+		"body": [
+			"If ${1:Object} Is Nothing Then"
+		]
+	},
 	"With / End With" : {
-		"prefix": "WithE",
+		"prefix": "With_EndWith",
 		"body": [
 			"With ${1:Object}",
 			"\t$0",
@@ -137,45 +170,70 @@
 		]
 	},
 	"End If" : {
-		"prefix": "endIf",
+		"prefix": "EndIf",
 		"body": [
 			"End If$0"
 		]
 	},
+	"Else EndIf" : {
+		"prefix": "Else_EndIf",
+		"body": [
+			"Else",
+			"\t$0",
+			"End If"
+		]
+	},
+	"Then Else EndIf" : {
+		"prefix": "Then_Else_EndIf",
+		"body": [
+			"Then",
+			"Else",
+			"\t$0",
+			"End If"
+		]
+	},
 	"End Sub" : {
-		"prefix": "endsub",
+		"prefix": "End_Sub",
 		"body": [
 			"End Sub$0"
 		]
 	},
 	"End Function" : {
-		"prefix": "endfunction",
+		"prefix": "End_Function",
 		"body": [
 			"End Function$0"
 		]
 	},
 	"Sub" : {
-		"prefix": "sub",
+		"prefix": "Sub",
 		"body": [
-			"${1|Private,Public|} Sub ${2:SubName}($3)\n",
+			"Sub ${2:SubName}($3)\n",
 			"\t$0\n",
 			"End Sub"
 		]
 	},
-	"Exit Sub / Function" : {
-		"prefix": "exit",
-		"body": [
-			"Exit ${1|Sub,Function|}\n$0"
-		]
+	"Exit Sub" : {
+		"prefix": "Exit_Sub",
+		"body": "Exit Sub$0"
+	},
+	"Exit Function" : {
+		"prefix": "Exit_Function",
+		"body": "Exit Function$0"
 	},
 	"Is Nothing" : {
-		"prefix": "IsNoth",
+		"prefix": "IsNothing",
 		"body": [
 			"Is Nothing $0"
 		]
 	},
+	"Set Nothing" : {
+		"prefix": "SetNothing",
+		"body": [
+			"Set ${1:Obj} = Nothing$0"
+		]
+	},
 	"If / Else" : {
-		"prefix": "ifElse",
+		"prefix": "IfElse",
 		"body": [
 			"If ${1:Expression} Then",
 			"\t$0",
@@ -396,5 +454,9 @@
 		"body" :[
 			"CreateObject(${1|\"Scripting.Dictionary\",\"Scripting.FileSystemObject\"|})$0"
 		]
+	},
+	"ParamArray" : {
+		"prefix": "ParamArray",
+		"body" : "ParamArray ${1:Arg1_Arg2__ArgN}() As Variant$0"
 	}
 }
