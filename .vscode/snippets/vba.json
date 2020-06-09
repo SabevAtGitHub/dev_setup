@@ -205,7 +205,7 @@
 		]
 	},
 	"Sub" : {
-		"prefix": "Sub",
+		"prefix": "sub",
 		"body": [
 			"Sub ${2:SubName}($3)\n",
 			"\t$0\n",
