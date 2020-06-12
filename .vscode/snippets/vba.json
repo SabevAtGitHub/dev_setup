@@ -5,7 +5,7 @@
 			"\t''' $4",
 			"\t'''  Params:",
 			"\t'''   $2:",
-			"\tPublic Function ${1:FuncName}($2) As ${3:ReturnType}",
+			"\tPublic Function ${1:FuncName}($2) As ${3:Variant}",
 			"Attribute $1.VB_Description = \"${4:Doc string}  \\nParams:\\n $2\"",
 			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString Then fx_ResetErr_",
 			"\t\tConst fx_PROC_ = \"$1\"",
@@ -21,7 +21,7 @@
 			"\t''' $4",
 			"\t'''  Params:",
 			"\t'''   $2:",
-			"\tPublic Function ${1:FuncName}($2) As ${3:ReturnType}",
+			"\tPublic Function ${1:FuncName}($2) As ${3:Variant}",
 			"Attribute $1.VB_Description = \"${4:Doc string}  \\nParams:\\n $2\"",
 			"\t\tIf fx_ErrNum_ <> fxErrNone Or fx_ErrMsg_ <> vbNullString Then fx_ResetErr_",
 			"\t\tConst fx_PROC_ = \"$1\"",
@@ -242,11 +242,12 @@
 			"End If"
 		]
 	},
-	"FxCallStack Sub CleanFail":{
-		"prefix": "Sub_CleanFail",
+	"Sub CleanFail":{
+		"prefix": "CleanFail_Sub",
 		"body":[
 			"Sub ${1:SubName}($2)",
-			"\tFxCallStack.Push ModuleName, \"$1\"",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
 			"\tOn Error GoTo CleanFail",
 			"",
 			"\t$0",
@@ -259,11 +260,12 @@
 			"End Sub"
 		]
 	},
-	"FxCallStack Function CleanFail":{
-		"prefix": "Function_CleanFail",
+	"Function CleanFail":{
+		"prefix": "CleanFail_Func",
 		"body":[
-			"Function ${1:FunctionName}($2) As ${3:ReturnType}",
-			"\tFxCallStack.Push ModuleName, \"$1\"",
+			"Function ${1:FunctionName}($2) As ${3:Variant}",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
 			"\tOn Error GoTo CleanFail",
 			"",
 			"\t$1 = $0",
@@ -276,11 +278,12 @@
 			"End Function"
 		]
 	},
-	"FxCallStack Function CleanFail Object":{
-		"prefix": "Function_CleanFail_Object",
+	"Function CleanFail Object":{
+		"prefix": "CleanFail_Func_Object",
 		"body":[
-			"Function ${1:FunctionName}($2) As ${3:ReturnType}",
-			"\tFxCallStack.Push ModuleName, \"$1\"",
+			"Function ${1:FunctionName}($2) As ${3:Object}",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
 			"\tOn Error GoTo CleanFail",
 			"\tDim ${4:Result} As $3",
 			"\tSet $4 = New $3",
@@ -295,11 +298,12 @@
 			"End Function"
 		]
 	},
-	"FxCallStack Sub UnhandledFail":{
-		"prefix": "Sub_UnhandledFail",
+	"Sub UnhandledFail":{
+		"prefix": "UnhandledFail_Sub",
 		"body":[
 			"Sub ${1:SubName}($2)",
-			"\tFxCallStack.Push ModuleName, \"$1\"",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
 			"\tOn Error GoTo UnhandledFail",
 			"",
 			"\t$0",
@@ -311,11 +315,12 @@
 			"End Sub"
 		]
 	},
-	"FxCallStack Function UnhandledFail":{
-		"prefix": "Function_UnhandledFail",
+	"Function UnhandledFail":{
+		"prefix": "UnhandledFail_Func",
 		"body":[
-			"Function ${1:FunctionName}($2) As ${3:ReturnType}",
-			"\tFxCallStack.Push ModuleName, \"$1\"",
+			"Function ${1:FunctionName}($2) As ${3:Variant}",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
 			"\tOn Error GoTo UnhandledFail",
 			"",
 			"\t$1 = $0",
@@ -327,11 +332,12 @@
 			"End Function"
 		]
 	},
-	"FxCallStack Function UnhandledFail Object":{
-		"prefix": "Function_UnhandledFail_Object",
+	"Function UnhandledFail Object":{
+		"prefix": "UnhandledFail_Func_Object",
 		"body":[
-			"Function ${1:FunctionName}($2) As ${3:ReturnType}",
-			"\tFxCallStack.Push ModuleName, \"$1\"",
+			"Function ${1:FunctionName}($2) As ${3:Object}",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
 			"\tOn Error GoTo UnhandledFail",
 			"\tDim ${4:Result} As $3",
 			"\tSet $4 = New $3",
@@ -345,11 +351,12 @@
 			"End Function"
 		]
 	},
-	"FxCallStack Sub HandledFail":{
-		"prefix": "Sub_HandledFail",
+	"Sub HandledFail":{
+		"prefix": "HandledFail_Sub",
 		"body":[
 			"Sub ${1:SubName}($2)",
-			"\tFxCallStack.Push ModuleName, \"$1\"",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
 			"\tOn Error GoTo HandledFail",
 			"",
 			"\t$0",
@@ -369,11 +376,12 @@
 			"End Sub"
 		]
 	},
-	"FxCallStack Function HandledFail":{
-		"prefix": "Function_HandledFail",
+	"Function HandledFail":{
+		"prefix": "HandledFail_Func",
 		"body":[
-			"Function ${1:FunctionName}($2) As ${3:ReturnType}",
-			"\tFxCallStack.Push ModuleName, \"$1\"",
+			"Function ${1:FunctionName}($2) As ${3:Variant}",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
 			"\tOn Error GoTo HandledFail",
 			"",
 			"\t$1 = $0",
@@ -393,11 +401,12 @@
 			"End Function"
 		]
 	},
-	"FxCallStack Function HandledFail Object":{
-		"prefix": "Function_HandledFail_Object",
+	"Function HandledFail Object":{
+		"prefix": "HandledFail_Func_Object",
 		"body":[
-			"Function ${1:FunctionName}($2) As ${3:ReturnType}",
-			"\tFxCallStack.Push ModuleName, \"$1\"",
+			"Function ${1:FunctionName}($2) As ${3:Object}",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
 			"\tOn Error GoTo HandledFail",
 			"\tDim ${4:Result} As $3",
 			"\tSet $4 = New $3",
@@ -458,5 +467,15 @@
 	"ParamArray" : {
 		"prefix": "ParamArray",
 		"body" : "ParamArray ${1:Arg1_Arg2__ArgN}() As Variant$0"
+	},
+	"TThis" : {
+		"prefix": "TThis",
+		"body" : [
+			"Private Type TThis",
+			"\tIsInitiated As Boolean",	
+			"",
+			"End Type",	
+			"Dim this As TThis$0"
+		]
 	}
 }
