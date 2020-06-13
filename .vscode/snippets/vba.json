@@ -108,9 +108,9 @@
 		]
 	},
 	"Bounds For Loop" : {
-		"prefix": "forbound",
+		"prefix": "for_LBound",
 		"body": [
-			"For ${1:i} = LBound(${2:arr}) To UBound($2)",
+			"For ${1:i} = LBound(${2:Arr}) To UBound($2)",
 			"\t$0",
 			"Next $1"
 		]
@@ -133,6 +133,14 @@
 		"prefix": "IfThen_EndIf",
 		"body": [
 			"If ${1:Expression} Then",
+			"\t$0",
+			"End If"
+		]
+	},
+	"Else - EndIf" : {
+		"prefix": "Else_EndIf",
+		"body": [
+			"Else",
 			"\t$0",
 			"End If"
 		]
@@ -240,6 +248,50 @@
 			"Else",
 			"\t",
 			"End If"
+		]
+	},
+	"Sub CleanExit":{
+		"prefix": "CleanExit_Sub",
+		"body":[
+			"Sub ${1:SubName}($2)",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
+			"\tOn Error GoTo CleanExit",
+			"",
+			"\t$0",
+			"CleanExit:",
+			"\tFxCallStack.Pop",
+			"End Sub"
+		]
+	},
+	"Function CleanExit":{
+		"prefix": "CleanExit_Func",
+		"body":[
+			"Function ${1:FunctionName}($2) As ${3:Variant}",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
+			"\tOn Error GoTo CleanExit",
+			"",
+			"\t$1 = $0",
+			"CleanExit:",
+			"\tFxCallStack.Pop",
+			"End Function"
+		]
+	},
+	"Function CleanExit Object":{
+		"prefix": "CleanExit_Func_Object",
+		"body":[
+			"Function ${1:FunctionName}($2) As ${3:Object}",
+			"\tConst ProcName = \"$1\"",
+			"\tFxCallStack.Push ModuleName, ProcName",
+			"\tOn Error GoTo CleanExit",
+			"\tDim ${4:Result} As $3",
+			"\tSet $4 = New $3",
+			"\t",
+			"\tSet $1 = $4$0",
+			"CleanExit:",
+			"\tFxCallStack.Pop",
+			"End Function"
 		]
 	},
 	"Sub CleanFail":{
@@ -477,5 +529,29 @@
 			"End Type",	
 			"Dim this As TThis$0"
 		]
+	},
+	"Dim Range" : {
+		"prefix": "DimRng",
+		"body" : "Dim ${1:Rng}) As Range"
+	},
+	"Dim Worksheet" : {
+		"prefix": "DimWks",
+		"body" : "Dim ${1:Wks}) As Worksheet"
+	},
+	"UBound" : {
+		"prefix": "UBound",
+		"body" : "UBound(${1:Arr})$0"
+	},
+	"LBound" : {
+		"prefix": "LBound",
+		"body" : "LBound(${1:Arr})$0"
+	},
+	"IsMissing" : {
+		"prefix": "IsMissing",
+		"body" : "IsMissing(${1:Val})$0"
+	},
+	"IsObject" : {
+		"prefix": "IsObject",
+		"body" : "IsObject(${1:Obj})$0"
 	}
 }
