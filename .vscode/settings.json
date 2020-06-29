@@ -172,5 +172,6 @@
         },
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    
+    "python.languageServer": "Microsoft",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, SpacesBeforeTrailingComments: 3, ColumnLimit: 75, PointerAlignment: Right, AllowShortFunctionsOnASingleLine: InlineOnly}"   
 }
