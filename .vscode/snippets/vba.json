@@ -524,7 +524,6 @@
 		"prefix": "TThis",
 		"body" : [
 			"Private Type TThis",
-			"\tIsInitiated As Boolean",	
 			"",
 			"End Type",	
 			"Dim this As TThis$0"
@@ -532,11 +531,11 @@
 	},
 	"Dim Range" : {
 		"prefix": "DimRng",
-		"body" : "Dim ${1:Rng}) As Range"
+		"body" : "Dim ${1:Rng} As Range"
 	},
 	"Dim Worksheet" : {
 		"prefix": "DimWks",
-		"body" : "Dim ${1:Wks}) As Worksheet"
+		"body" : "Dim ${1:Wks} As Worksheet"
 	},
 	"UBound" : {
 		"prefix": "UBound",
