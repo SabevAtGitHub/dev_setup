@@ -524,7 +524,6 @@
 		"prefix": "TThis",
 		"body" : [
 			"Private Type TThis",
-			"\tIsInitiated As Boolean",	
 			"",
 			"End Type",	
 			"Dim this As TThis$0"
