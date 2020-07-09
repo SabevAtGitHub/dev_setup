@@ -2,7 +2,7 @@
 SETLOCAL enableDelayedExpansion
 
 set flag=%1
-set D_USR=D:\dev\.resources\.vscode
+set D_USR=D:\dev\dev_setup\vscode
 set CODE_USR=%AppData%\Code\User
 
 IF "%flag%"=="sett" ( GOTO:proc_sett )

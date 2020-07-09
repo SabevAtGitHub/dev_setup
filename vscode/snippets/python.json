@@ -50,5 +50,13 @@
 			"\t${CLIPBOARD}\n\t$0"
 		],
 		"description": "for loop + clpboard"
+	},
+	"PySide2 plugin path" : {
+		"prefix": "pyside2_plugin_path",
+		"body": [
+			"import PySide2",
+			"plugin_path = os.path.join(os.path.dirname(PySide2.__file__), 'plugins', 'platforms')",
+			"os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path$0"
+		]
 	}
 }

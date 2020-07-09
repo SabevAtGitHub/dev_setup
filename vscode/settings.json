@@ -39,7 +39,7 @@
                     "scope": [
                         "comment",
                         "variable",
-                        "entity.other.attribute-name",
+                        "entity.other.attribute-name"
                     ],
                     "settings": {
                         "fontStyle": "italic"
@@ -54,30 +54,17 @@
             ]
         },
         "[azure]": {
-            "keywords": "#8f81a8",
-            // "numbers": "#FF0000",
-            // "strings": "#f89f89",
+            "semanticHighlighting": true,
+            "variables": "#b46274",
             "textMateRules": [
                 {
                     "scope": [
                         "keyword",
-                        // "meta",
-                    ],
-                    "settings": {
-                        // "foreground": "#b294e9",
-                        "fontStyle": "italic"
-                    }
-                },
-                {
-                    "scope": [
-                        "keyword.operator.assignment",
-                        "keyword.operator.arithmetic",
-                        "keyword.operator.logical",
-                        "keyword.operator.new",
                         "entity.name.function"
                     ],
                     "settings": {
                         "foreground": "#508aaa",
+                        "fontStyle": "italic"
                     }
                 },
                 {
@@ -88,7 +75,7 @@
                 },
                 {
                     "scope": [
-                        "variable.parameter",
+                        "variable.parameter"
                     ],
                     "settings": {
                         "foreground": "#b46274"
@@ -102,8 +89,17 @@
                         "foreground": "#b46274",
                         "fontStyle": "bold"
                     }
+                },
+                {
+                    "scope":[
+                        "comment"
+                    ],
+                    "settings": {
+                        "foreground": "#838383",
+                        "fontStyle": "italic"
+                    }
                 }
-            ],
+            ]
         }
     },
     "workbench.colorCustomizations": {
@@ -123,9 +119,7 @@
             "input.background": "#25272e",
             "input.foreground": "#f8f8f0",
             "input.placeholderForeground": "#97999c",
-            //
             "tab.unfocusedHoverBorder": "#508aaa",
-            //
             "editorIndentGuide.activeBackground": "#b46274a9",
             "editorIndentGuide.background": "#92546156",
             "editorCodeLens.foreground": "#97999c"
@@ -169,7 +163,7 @@
             "icon": "alert",
             "foreground": "#EE3A6A",
             "type": "tag"
-        },
+        }
     },
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
@@ -177,7 +171,8 @@
         "--extension-pkg-whitelist=os,PySide2,win32api",
         "--errors-only"
     ],
+    "pyside2-vsc.designer-creator.path": "C:\\anaconda3\\Lib\\site-package\\PySide2\\designer.exe",
     "diffEditor.ignoreTrimWhitespace": false,
-    "python.languageServer": "Pylance",
+    "python.languageServer": "Microsoft",
     "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, SpacesBeforeTrailingComments: 3, ColumnLimit: 75, PointerAlignment: Right, AllowShortFunctionsOnASingleLine: InlineOnly}"   
 }
