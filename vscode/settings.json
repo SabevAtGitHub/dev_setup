@@ -106,6 +106,7 @@
         "[azure]": {
             "sideBar.background": "#181D26",
             "tab.activeBorder": "#b46274",
+            "sideBar.border": "#81818188",
             "tab.inactiveBackground": "#181D26",
             "tab.inactiveForeground": "#f8f8f0",
             "tab.activeForeground": "#f8f8f0",
