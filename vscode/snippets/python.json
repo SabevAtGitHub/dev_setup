@@ -1,7 +1,7 @@
 {
-	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
 	// same ids are connected.
 	// Example:
 	// "Print to console": {
@@ -57,6 +57,33 @@
 			"import PySide2",
 			"plugin_path = os.path.join(os.path.dirname(PySide2.__file__), 'plugins', 'platforms')",
 			"os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path$0"
+		]
+	},
+	"Mock DataFrame ndx" : {
+		"prefix": "mock_df_states_ndx",
+		"body": [
+			"area = pd.Series({'California': 423967, 'Texas': 695662, 'New York': 141297, 'Florida': 170312, 'Illinois': 149995})",
+			"pop = pd.Series({'California': 38332521, 'Texas': 26448193, 'New York': 19651127, 'Florida': 19552860, 'Illinois': 12882135})",
+			"data = pd.DataFrame({'area':area, 'pop':pop})",
+			"data"
+		]
+	},
+	"Mock DataFrame col" : {
+		"prefix": "mock_df_states_col",
+		"body": [
+			"area = pd.Series({0 : 423967, 1: 695662, 2: 141297, 3: 170312, 4: 149995})",
+			"pop = pd.Series({0 : 38332521, 1: 26448193, 2: 19651127, 3: 19552860, 4: 12882135})",
+			"states = ['California', 'Texas', 'New York', 'Florida', 'Illinois']",
+			"data = pd.DataFrame({'states':states, 'area':area, 'pop':pop}, index=range(len(states)))",
+			"data"
+		]
+	},
+	"Mock DataFrame abcd" : {
+		"prefix": "mock_df_states_abcd",
+		"body": [
+			"rng = np.random.RandomState(42)",
+			"data = pd.DataFrame(rng.randint(0, 10, (3, 4)), columns=['A', 'B', 'C', 'D'])",
+			"data"
 		]
 	}
 }
