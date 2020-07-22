@@ -10,7 +10,6 @@
     "gitlens.hovers.enabled": false,
     "gitlens.statusBar.enabled": false,
     "window.zoomLevel": 0,
-    "editor.minimap.enabled": false,
     // "C_Cpp.clang_format_path": "C:\\Program Files (x86)\\LLVM\\bin\\clang-format.exe",
     // "C_Cpp.intelliSenseEngine": "Default",
     "gitlens.views.repositories.autoRefresh": false,
@@ -20,15 +19,19 @@
     "gitlens.views.repositories.avatars": false,
     "gitlens.views.search.avatars": false,
     "gitlens.views.repositories.location": "scm",
+    "scm.diffDecorationsGutterWidth": 1,
     "gitlens.keymap": "none",
+    "editor.minimap.enabled": false,
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
     "breadcrumbs.enabled": true,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
     // "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
     // "editor.fontFamily" : "Fira Code",
     "editor.fontFamily": "Source Code Pro",
+    "editor.semanticTokenColorCustomizations":{"[azure]": {"enabled": true}},
     "workbench.colorTheme": "azure",
     "editor.tokenColorCustomizations": {
         "[Flatland Monokai]": {
@@ -54,7 +57,6 @@
             ]
         },
         "[azure]": {
-            "semanticHighlighting": true,
             "variables": "#b46274",
             "textMateRules": [
                 {
@@ -173,7 +175,7 @@
         "--errors-only"
     ],
     "pyside2-vsc.designer-creator.path": "C:\\anaconda3\\Lib\\site-package\\PySide2\\designer.exe",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "python.languageServer": "Microsoft",
-    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, SpacesBeforeTrailingComments: 3, ColumnLimit: 75, PointerAlignment: Right, AllowShortFunctionsOnASingleLine: InlineOnly}"   
+    "python.languageServer": "Pylance",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, SpacesBeforeTrailingComments: 3, ColumnLimit: 75, PointerAlignment: Right, AllowShortFunctionsOnASingleLine: InlineOnly}",
+    "explorer.confirmDragAndDrop": false
 }
