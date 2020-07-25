@@ -85,5 +85,9 @@
 			"data = pd.DataFrame(rng.randint(0, 10, (3, 4)), columns=['A', 'B', 'C', 'D'])",
 			"data"
 		]
+	},
+	"df column number" : {
+		"prefix": "df_column_number",
+		"body": "${1:df}.columns.get_loc(${2:'ColumnName'})$0"
 	}
 }

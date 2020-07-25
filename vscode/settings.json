@@ -31,8 +31,12 @@
     // "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
     // "editor.fontFamily" : "Fira Code",
     "editor.fontFamily": "Source Code Pro",
-    "editor.semanticTokenColorCustomizations":{"[azure]": {"enabled": true}},
     "workbench.colorTheme": "azure",
+    "editor.semanticTokenColorCustomizations": {
+        "[azure]": {
+            "enabled": true
+        }
+    },
     "editor.tokenColorCustomizations": {
         "[Flatland Monokai]": {
             "variables": "#AE81FF",
@@ -53,7 +57,7 @@
                     "settings": {
                         "fontStyle": "italic bold"
                     }
-                }
+                },
             ]
         },
         "[azure]": {
@@ -77,10 +81,11 @@
                 },
                 {
                     "scope": [
-                        "variable.parameter"
+                        "variable.parameter",
                     ],
                     "settings": {
-                        "foreground": "#b46274"
+                        "foreground": "#b46274",
+                        "fontStyle": ""
                     }
                 },
                 {
@@ -99,6 +104,29 @@
                     "settings": {
                         "foreground": "#838383",
                         "fontStyle": "italic"
+                    }
+                },
+                {
+                    "scope" : [
+                        "support.function.builtin.python",
+                        "support.function.magic.python",
+                        "storage.type.function.lambda.python",
+
+                    ],
+                    "settings": {
+                        "foreground": "#4ec9aa",
+                        "fontStyle": "italic"
+                    }
+                },
+                {
+                    "scope" : [
+                        "storage.type.class.python",
+                        "storage.type.function.python",
+
+                    ],
+                    "settings": {
+                        "foreground": "#4ec9aa",
+                        "fontStyle": ""
                     }
                 }
             ]
@@ -143,7 +171,7 @@
     "python.jediEnabled": false,
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.runStartupCommands": "%load_ext autoreload\n%autoreload 2",
-    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.dataScience.enableCellCodeLens": true,
     "workbench.iconTheme": "vscode-icons",
     // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
@@ -175,7 +203,8 @@
         "--errors-only"
     ],
     "pyside2-vsc.designer-creator.path": "C:\\anaconda3\\Lib\\site-package\\PySide2\\designer.exe",
-    "python.languageServer": "Pylance",
     "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, SpacesBeforeTrailingComments: 3, ColumnLimit: 75, PointerAlignment: Right, AllowShortFunctionsOnASingleLine: InlineOnly}",
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "python.languageServer": "Pylance",
+
 }
