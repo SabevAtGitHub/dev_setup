@@ -138,5 +138,9 @@
     {
         "key": "ctrl+shift+numpad_add",
         "command": "editor.action.inPlaceReplace.up"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "-code-runner.runCustomCommand"
     }
 ]
