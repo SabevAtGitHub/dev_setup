@@ -89,5 +89,20 @@
 	"df column number" : {
 		"prefix": "df_column_number",
 		"body": "${1:df}.columns.get_loc(${2:'ColumnName'})$0"
+	},
+	"pandas display format" : {
+		"prefix": "pandas_options",
+		"body": [
+			"pd.options.display.max_rows = 10",
+			"pd.options.display.max_columns = 15",
+			"pd.options.display.float_format = '{:,.2f}'.format"
+		]
+	},
+	"Add module logger" : {
+		"prefix": "logger",
+		"body": [
+			"import logging",
+			"logger = logging.getLogger(__name__)",
+		]
 	}
 }
