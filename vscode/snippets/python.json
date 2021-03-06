@@ -89,5 +89,9 @@
 	"df column number" : {
 		"prefix": "df_column_number",
 		"body": "${1:df}.columns.get_loc(${2:'ColumnName'})$0"
+	},
+    "raise_virtual_function_call" : {
+		"prefix" : "raise_virtual_function_call",
+		"body" : "raise NotImplementedError(f'Calling virtual function in {self.__class__.__name__}')$0"
 	}
 }
