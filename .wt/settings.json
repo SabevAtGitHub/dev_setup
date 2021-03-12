@@ -31,7 +31,7 @@
                 "name" : "cmd",
                 "padding" : "10, 10, 0, 0",
                 "snapOnInput" : true,
-                "startingDirectory" : ".",
+                "startingDirectory" : "D:\\dev",
                 "useAcrylic" : true,
                 "tabTitle": "cmd"
             },
