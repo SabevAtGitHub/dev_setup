@@ -1,2 +1,4 @@
+[Settings]
 C:\Users\Oem\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState
+[Icons]
 C:\Users\Oem\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState
